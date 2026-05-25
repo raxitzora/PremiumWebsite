@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar/Navbar";
 import CoffeeCursor from "@/components/UI/CoffeeCursor";
 import SmoothScroll from "@/components/UI/SmoothScroll";
 import LoaderScreen from "@/components/UI/LoaderScreen";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +31,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[#090706] text-white">
-        
+        <SpeedInsights />
         <LoaderScreen />
         <SmoothScroll />
         <CoffeeCursor />
