@@ -1,26 +1,328 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------ */
+/* BASE */
+/* ------------------------------------------------ */
+
+html,
+body {
+  background: #0c0908;
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Section Offset */
+section {
+  scroll-margin-top: 120px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ------------------------------------------------ */
+/* LENIS */
+/* ------------------------------------------------ */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ------------------------------------------------ */
+/* CUSTOM CURSOR */
+/* ------------------------------------------------ */
+
+html,
+body,
+a,
+button {
+  cursor: none;
+}
+
+/* ------------------------------------------------ */
+/* COFFEE SPLASH PARTICLES */
+/* ------------------------------------------------ */
+
+.coffee-drop {
+  position: fixed;
+
+  border-radius: 999px;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(222, 184, 135, 0.95) 0%,
+      rgba(139, 90, 54, 0.92) 35%,
+      rgba(60, 30, 15, 0.45) 70%,
+      transparent 100%
+    );
+
+  transform: translate(-50%, -50%);
+
+  animation:
+    coffeeSplash 1400ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  filter:
+    blur(0.5px)
+    drop-shadow(
+      0 0 12px rgba(192, 139, 92, 0.28)
+    );
+}
+
+/* Liquid Burst */
+
+.coffee-burst {
+  position: fixed;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 999px;
+
+  pointer-events: none;
+
+  z-index: 9998;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(192, 139, 92, 0.24) 0%,
+      rgba(139, 90, 54, 0.14) 40%,
+      transparent 75%
+    );
+
+  filter: blur(18px);
+
+  animation:
+    coffeeBurst 1200ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+/* Ambient Glow */
+
+.coffee-glow {
+  position: fixed;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 999px;
+
+  pointer-events: none;
+
+  z-index: 9997;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(192, 139, 92, 0.18) 0%,
+      transparent 72%
+    );
+
+  filter: blur(55px);
+
+  animation:
+    coffeeGlow 1500ms
+    ease-out
+    forwards;
+}
+
+/* ------------------------------------------------ */
+/* PARTICLE ANIMATIONS */
+/* ------------------------------------------------ */
+
+@keyframes coffeeSplash {
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.2);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+      )
+      scale(1.8);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes coffeeBurst {
+  0% {
+    opacity: 0.95;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(2.6);
+  }
+}
+
+@keyframes coffeeGlow {
+  0% {
+    opacity: 0.8;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.5);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.9);
+  }
+}
+
+/* ------------------------------------------------ */
+/* HERO BUTTON COFFEE FILL */
+/* ------------------------------------------------ */
+
+.coffee-fill-btn,
+.coffee-fill-btn-dark {
+  position: relative;
+}
+
+.coffee-fill,
+.coffee-fill-dark {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  transform: translateY(100%);
+
+  transition:
+    transform 850ms
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light Coffee Fill */
+
+.coffee-fill {
+  background:
+    linear-gradient(
+      to top,
+      #6f4326 0%,
+      #9b623d 35%,
+      #c08b5c 100%
+    );
+}
+
+/* Dark Coffee Fill */
+
+.coffee-fill-dark {
+  background:
+    linear-gradient(
+      to top,
+      #3b2417 0%,
+      #6a4229 40%,
+      #b57a4f 100%
+    );
+}
+
+/* Active Fill */
+
+.coffee-fill-active .coffee-fill,
+.coffee-fill-active .coffee-fill-dark {
+  transform: translateY(0%);
+}
+
+/* ------------------------------------------------ */
+/* MOBILE */
+/* ------------------------------------------------ */
+
+@media (max-width: 1023px) {
+  html,
+  body,
+  a,
+  button {
+    cursor: auto !important;
+  }
+}
+
+/* NAVBAR COFFEE FILL */
+
+.nav-coffee-fill,
+.nav-coffee-fill-dark {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 700ms
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light Fill */
+
+.nav-coffee-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #5a3823 0%,
+      #8b5a36 40%,
+      #c08b5c 100%
+    );
+}
+
+/* Dark Fill */
+
+.nav-coffee-fill-dark {
+  background:
+    linear-gradient(
+      90deg,
+      #2a1710 0%,
+      #5f3b28 40%,
+      #c08b5c 100%
+    );
+}
+
+/* Active Animation */
+
+.nav-coffee-active .nav-coffee-fill,
+.nav-coffee-active .nav-coffee-fill-dark {
+  transform: scaleX(1);
 }
