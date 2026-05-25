@@ -37,6 +37,25 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLiquidScroll = (
+    e,
+    targetSection
+  ) => {
+    const target = e.currentTarget;
+
+    target.classList.add("nav-coffee-active");
+
+    setTimeout(() => {
+      scrollToSection(targetSection);
+    }, 850);
+
+    setTimeout(() => {
+      target.classList.remove(
+        "nav-coffee-active"
+      );
+    }, 1200);
+  };
+
   return (
     <header
       className="
@@ -45,9 +64,12 @@ export default function Navbar() {
         top-0
         z-50
         w-full
+
         border-b
         border-[#3b2a22]/40
-        bg-[#120d0b]/85
+
+        bg-[#120d0b]/82
+
         backdrop-blur-2xl
       "
     >
@@ -59,6 +81,7 @@ export default function Navbar() {
           max-w-[1550px]
           items-center
           justify-between
+
           px-5
 
           sm:px-8
@@ -67,8 +90,16 @@ export default function Navbar() {
       >
         {/* Logo */}
         <button
-          onClick={() => scrollToSection("body")}
-          className="group relative flex shrink-0 items-center"
+          onClick={() =>
+            scrollToSection("body")
+          }
+          className="
+            group
+            relative
+            flex
+            shrink-0
+            items-center
+          "
         >
           <div className="relative overflow-hidden rounded-md">
             <Image
@@ -78,9 +109,9 @@ export default function Navbar() {
               height={100}
               priority
               className="
-          
                 transition-transform
                 duration-700
+
                 group-hover:scale-[1.02]
               "
             />
@@ -90,9 +121,12 @@ export default function Navbar() {
               className="
                 absolute
                 inset-0
+
                 bg-[#c08b5c]/0
+
                 transition-all
                 duration-700
+
                 group-hover:bg-[#c08b5c]/5
               "
             />
@@ -106,21 +140,18 @@ export default function Navbar() {
             {navLinks.map((item) => (
               <button
                 key={item.name}
-                onClick={(e) => {
-                  const target = e.currentTarget;
-
-                  target.classList.add("nav-coffee-active");
-
-                  setTimeout(() => {
-                    scrollToSection(item.href);
-
-                    target.classList.remove("nav-coffee-active");
-                  }, 700);
-                }}
+                onClick={(e) =>
+                  handleLiquidScroll(
+                    e,
+                    item.href
+                  )
+                }
                 className="
                   group
                   relative
                   overflow-hidden
+
+                  rounded-full
 
                   px-6
                   py-3
@@ -138,8 +169,8 @@ export default function Navbar() {
                   hover:text-[#ddb28a]
                 "
               >
-                {/* Coffee Fill */}
-                <span className="nav-coffee-fill" />
+                {/* REAL LIQUID */}
+                <span className="nav-liquid" />
 
                 {/* Text */}
                 <span className="relative z-10">
@@ -152,9 +183,12 @@ export default function Navbar() {
                     absolute
                     bottom-1
                     left-1/2
+
                     h-px
                     w-0
+
                     -translate-x-1/2
+
                     bg-[#c08b5c]
 
                     transition-all
@@ -169,7 +203,9 @@ export default function Navbar() {
                   className="
                     absolute
                     inset-0
+
                     rounded-full
+
                     bg-[#c08b5c]/0
 
                     transition-all
@@ -184,24 +220,21 @@ export default function Navbar() {
 
           {/* Visit Button */}
           <button
-            onClick={(e) => {
-              const target = e.currentTarget;
-
-              target.classList.add("nav-coffee-active");
-
-              setTimeout(() => {
-                scrollToSection("#visit");
-
-                target.classList.remove("nav-coffee-active");
-              }, 700);
-            }}
+            onClick={(e) =>
+              handleLiquidScroll(
+                e,
+                "#visit"
+              )
+            }
             className="
               group
               relative
               ml-6
+
               overflow-hidden
 
               rounded-sm
+
               border
               border-[#c08b5c]/30
 
@@ -221,13 +254,14 @@ export default function Navbar() {
               duration-500
 
               hover:-translate-y-[1px]
+
               hover:bg-[#ddb28a]
 
               hover:shadow-[0_0_40px_rgba(192,139,92,0.25)]
             "
           >
-            {/* Coffee Fill */}
-            <span className="nav-coffee-fill-dark" />
+            {/* LIQUID */}
+            <span className="nav-liquid" />
 
             {/* Text */}
             <span className="relative z-10">
@@ -240,6 +274,7 @@ export default function Navbar() {
                 absolute
                 inset-y-0
                 left-[-120%]
+
                 w-[120%]
 
                 bg-gradient-to-r
@@ -258,7 +293,9 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() =>
+            setIsOpen(!isOpen)
+          }
           aria-label="Toggle Menu"
           className="
             flex
@@ -268,10 +305,12 @@ export default function Navbar() {
             justify-center
 
             rounded-full
+
             border
             border-[#3b2a22]
 
             bg-[#1a1310]
+
             text-[#f3e7da]
 
             transition-all
@@ -329,7 +368,9 @@ export default function Navbar() {
                     setIsOpen(false);
 
                     setTimeout(() => {
-                      scrollToSection(item.href);
+                      scrollToSection(
+                        item.href
+                      );
                     }, 250);
                   }}
                   className="
@@ -362,7 +403,9 @@ export default function Navbar() {
                   setIsOpen(false);
 
                   setTimeout(() => {
-                    scrollToSection("#visit");
+                    scrollToSection(
+                      "#visit"
+                    );
                   }, 250);
                 }}
                 className="

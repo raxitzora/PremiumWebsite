@@ -14,6 +14,7 @@ body {
 }
 
 /* Section Offset */
+
 section {
   scroll-margin-top: 120px;
 }
@@ -86,7 +87,9 @@ button {
     );
 }
 
-/* Liquid Burst */
+/* ------------------------------------------------ */
+/* LIQUID BURST */
+/* ------------------------------------------------ */
 
 .coffee-burst {
   position: fixed;
@@ -118,7 +121,9 @@ button {
     forwards;
 }
 
-/* Ambient Glow */
+/* ------------------------------------------------ */
+/* AMBIENT GLOW */
+/* ------------------------------------------------ */
 
 .coffee-glow {
   position: fixed;
@@ -222,6 +227,7 @@ button {
 .coffee-fill,
 .coffee-fill-dark {
   position: absolute;
+
   inset: 0;
 
   z-index: 0;
@@ -233,7 +239,7 @@ button {
     cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Light Coffee Fill */
+/* Light Fill */
 
 .coffee-fill {
   background:
@@ -245,7 +251,7 @@ button {
     );
 }
 
-/* Dark Coffee Fill */
+/* Dark Fill */
 
 .coffee-fill-dark {
   background:
@@ -257,11 +263,178 @@ button {
     );
 }
 
-/* Active Fill */
+/* Active */
 
 .coffee-fill-active .coffee-fill,
 .coffee-fill-active .coffee-fill-dark {
   transform: translateY(0%);
+}
+
+/* ------------------------------------------------ */
+/* PREMIUM NAVBAR LIQUID */
+/* ------------------------------------------------ */
+
+.nav-liquid {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 0;
+
+  opacity: 0;
+
+  border-radius: 999px;
+
+  clip-path: inset(0 round 999px);
+
+  isolation: isolate;
+}
+
+/* Main Coffee Flow */
+
+.nav-liquid::before {
+  content: "";
+
+  position: absolute;
+
+  left: -140%;
+  top: -10%;
+
+  width: 135%;
+  height: 120%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1f120c 0%,
+      #4a2b1a 18%,
+      #6f4326 34%,
+      #8b5a36 52%,
+      #b57a4f 72%,
+      #e0ba93 100%
+    );
+
+  border-radius: 999px;
+
+  transform:
+    skewX(-16deg)
+    rotate(-1deg);
+
+  filter:
+    blur(1px)
+    drop-shadow(
+      0 0 18px rgba(192,139,92,0.35)
+    );
+
+  opacity: 0.98;
+}
+
+/* Shine */
+
+.nav-liquid::after {
+  content: "";
+
+  position: absolute;
+
+  left: -150%;
+  top: -15%;
+
+  width: 42%;
+  height: 130%;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(255,255,255,0.24),
+      rgba(255,255,255,0.08),
+      transparent
+    );
+
+  filter: blur(10px);
+
+  border-radius: 999px;
+
+  transform:
+    skewX(-16deg)
+    rotate(-1deg);
+}
+
+/* Active */
+
+.nav-coffee-active .nav-liquid {
+  opacity: 1;
+}
+
+/* Flow */
+
+.nav-coffee-active .nav-liquid::before {
+  animation:
+    roundedCoffeeFlow 1050ms
+    cubic-bezier(0.22,1,0.36,1)
+    forwards;
+}
+
+/* Shine */
+
+.nav-coffee-active .nav-liquid::after {
+  animation:
+    roundedCoffeeShine 1050ms
+    cubic-bezier(0.22,1,0.36,1)
+    forwards;
+}
+
+/* ------------------------------------------------ */
+/* FLOW MOTION */
+/* ------------------------------------------------ */
+
+@keyframes roundedCoffeeFlow {
+  0% {
+    left: -140%;
+
+    transform:
+      skewX(-18deg)
+      rotate(-2deg)
+      scaleY(0.96);
+  }
+
+  35% {
+    transform:
+      skewX(-14deg)
+      rotate(-1deg)
+      scaleY(1.03);
+  }
+
+  100% {
+    left: 130%;
+
+    transform:
+      skewX(-10deg)
+      rotate(0deg)
+      scaleY(1);
+  }
+}
+
+/* ------------------------------------------------ */
+/* SHINE MOTION */
+/* ------------------------------------------------ */
+
+@keyframes roundedCoffeeShine {
+  0% {
+    left: -150%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 170%;
+    opacity: 0;
+  }
 }
 
 /* ------------------------------------------------ */
@@ -275,54 +448,4 @@ button {
   button {
     cursor: auto !important;
   }
-}
-
-/* NAVBAR COFFEE FILL */
-
-.nav-coffee-fill,
-.nav-coffee-fill-dark {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 0;
-
-  transform: scaleX(0);
-
-  transform-origin: left;
-
-  transition:
-    transform 700ms
-    cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Light Fill */
-
-.nav-coffee-fill {
-  background:
-    linear-gradient(
-      90deg,
-      #5a3823 0%,
-      #8b5a36 40%,
-      #c08b5c 100%
-    );
-}
-
-/* Dark Fill */
-
-.nav-coffee-fill-dark {
-  background:
-    linear-gradient(
-      90deg,
-      #2a1710 0%,
-      #5f3b28 40%,
-      #c08b5c 100%
-    );
-}
-
-/* Active Animation */
-
-.nav-coffee-active .nav-coffee-fill,
-.nav-coffee-active .nav-coffee-fill-dark {
-  transform: scaleX(1);
 }
