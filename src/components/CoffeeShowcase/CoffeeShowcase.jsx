@@ -156,7 +156,7 @@ export default function CoffeeShowcase() {
             {/* Content */}
             <div className="absolute bottom-0 left-0 p-6 sm:p-8 md:p-10">
               <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#c79a63]">
-                Rangoon Coffee
+                Our Coffee
               </p>
 
               <h2

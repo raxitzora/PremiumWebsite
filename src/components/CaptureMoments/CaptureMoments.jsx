@@ -66,7 +66,7 @@ export default function CaptureMoments() {
           className="mx-auto max-w-4xl text-center"
         >
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-[#c08b5c]">
-            Rangoon Atmosphere
+            Our Atmosphere
           </p>
 
           <h2
@@ -277,7 +277,7 @@ export default function CaptureMoments() {
             "
           >
             “More than coffee — a collection of slow,
-            warm moments crafted inside Jaipur.”
+            warm moments crafted inside our Coffee Brewery.”
           </p>
 
           <div className="mx-auto mt-8 h-px w-24 bg-[#c08b5c]/50" />

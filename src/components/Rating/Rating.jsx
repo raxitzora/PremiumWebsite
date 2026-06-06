@@ -9,7 +9,7 @@ const reviews = [
     role: "Coffee Explorer",
     initials: "HK",
     review:
-      "Visited Rangoon Café in Jaipur recently and had a really good experience. The food was genuinely delicious — well-balanced flavors, nicely plated, and everything tasted fresh. From the mains to the coffee, it was satisfying without trying too hard.",
+      "Visited the Café recently and had a really good experience. The food was genuinely delicious — well-balanced flavors, nicely plated, and everything tasted fresh. From the mains to the coffee, it was satisfying without trying too hard.",
     className:
       "lg:translate-y-20 lg:rotate-[-1deg]",
   },
@@ -29,7 +29,7 @@ const reviews = [
     role: "Designer",
     initials: "SK",
     review:
-      "Visited Rangoon Coffee Brewery and spent around 4 hours here while waiting for our train — and it turned out to be a great choice! The café has a simple yet aesthetically pleasing vibe, cozy seating, and a calm atmosphere that makes you want to linger.",
+      "Visited the Coffee Brewery and spent around 4 hours here while waiting for our train — and it turned out to be a great choice! The café has a simple yet aesthetically pleasing vibe, cozy seating, and a calm atmosphere that makes you want to linger.",
     className:
       "lg:translate-y-10 lg:rotate-[0.5deg]",
   },

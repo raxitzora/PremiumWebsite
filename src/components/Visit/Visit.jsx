@@ -111,9 +111,9 @@ export default function Visit() {
                 </p>
 
                 <p className="text-lg leading-relaxed text-[#f5ece3]/90">
-                  12B, Civil Lines,
+                  BLA BLA BLA
                   <br />
-                  Jaipur, Rajasthan
+                BLA BLA BLA
                 </p>
               </div>
 
@@ -136,8 +136,8 @@ export default function Visit() {
                 </p>
 
                 <div className="space-y-2 text-lg text-[#f5ece3]/90">
-                  <p>hello@rangoonbrewery.in</p>
-                  <p>+91 09529777778</p>
+                  <p> brewery@email.com</p>
+                  <p>+91 xxxxxx</p>
                 </div>
               </div>
             </div>
@@ -308,7 +308,7 @@ export default function Visit() {
                 "
               >
                 <p className="text-xs uppercase tracking-[0.3em] text-[#c08b5c]">
-                  Rangoon Coffee Brewery
+                  Coffee Brewery
                 </p>
 
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#bfae9e]/75">
@@ -348,7 +348,7 @@ export default function Visit() {
                   text-[#f5ece3]
                 "
               >
-                Rangoon
+                Coffee Brewery
               </h3>
 
               <p
@@ -362,7 +362,7 @@ export default function Visit() {
                   text-[#bfae9e]/70
                 "
               >
-                © 2026 Rangoon Coffee Brewery.
+                © 2026 Coffee Brewery.
                 <br />
                 Defining the art of stillness.
               </p>

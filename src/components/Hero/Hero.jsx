@@ -34,7 +34,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="mb-6 text-xs font-light uppercase tracking-[0.3em] text-[#c8a27a] sm:text-sm"
           >
-            Rangoon Coffee Brewery • Jaipur
+             Coffee Brewery 
           </motion.p>
 
           {/* Main Heading */}

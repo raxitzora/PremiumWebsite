@@ -382,7 +382,7 @@ export default function Menu() {
                 </p>
 
                 <h3 className="mt-3 font-serif text-2xl text-[#f5ece3]">
-                  Rangoon Reserve
+                  We Reserve
                 </h3>
 
                 <p className="mt-2 max-w-xs text-sm leading-relaxed text-[#bfae9e]/75">

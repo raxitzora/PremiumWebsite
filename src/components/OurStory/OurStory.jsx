@@ -95,7 +95,7 @@ export default function OurStory() {
                 md:text-lg
               "
             >
-              At Rangoon, we believe coffee is the punctuation mark
+              At our Coffee Brewery, we believe coffee is the punctuation mark
               of the day. Our brewery is a sanctuary where the
               ancient craft of slow-brewing meets the vibrant soul
               of modern Jaipur.

@@ -428,7 +428,7 @@ export default function LoaderScreen() {
                   md:text-7xl
                 "
               >
-                Rangoon
+                Coffee
               </h1>
 
               <h2
